@@ -1,0 +1,99 @@
+#!/bin/bash
+
+##Script Author: Eric Goodwin
+##Assignment 3 for CS 2750 Spring Semester 2016
+
+##Specifications: Write a script to perform a bubblesort on an array
+##you will be given a set of integars in a file.
+##read the file into an array, sort array, and write it back to another file.
+##print array in with name of original file + .sorted . ie foobar become foorbar.sorted
+
+PATH=/usr/bin
+
+declare -a ARRAY
+
+##  Functions                        
+
+##
+## function getFilename accepts user input for the file to be sorted
+getFilename() {
+echo "Enter file name to be sorted."
+read filename
+if ! [ -e $filename ]
+   then 
+     echo Filename not valid.
+    exit
+
+fi
+}
+
+##reads the content of the file specified in the getFilename function an array
+readFile() { 
+
+let i=0
+while IFS=$'\n' read -r line_data; do
+    ARRAY[i]="${line_data}" # Populate array.
+    ((++i))
+done < $filename
+
+}
+
+##function printNumbers echos the contents of the array.  will be used to show user with  numbers were populated into the array before and after the sort
+printNumbers()
+{
+echo ${ARRAY[*]}  
+}
+
+
+##Function exchange swaps the contents of an element in the array  
+exchange()
+{
+temp=${ARRAY[$1]}
+
+ARRAY[$1]=${ARRAY[$2]}
+
+ARRAY[$2]=$temp
+
+}
+
+##function sortNumbers performs the bubblesort using the exchange function
+sortNumbers()
+{
+count=${#ARRAY[@]}
+for (( last=count-1;last>0;last--))
+do
+    for((i=0;i<last;i++))
+    do
+      j=$((i+1))
+      if [ ${ARRAY[i]} -gt ${ARRAY[j]} ]
+      then
+
+       exchange $i $j
+
+      fi
+    done
+done
+}
+
+###############
+##main script##
+###############
+
+getFilename
+readFile
+
+echo "--------------------------------------------------------------"
+
+echo "Numbers Before Sort:"
+
+printNumbers
+
+echo "--------------------------------------------------------------"
+sortNumbers
+
+echo "Numbers After Sort: "
+printNumbers
+echo ${ARRAY[*]} > $filename.sorted
+echo "--------------------------------------------------------------"
+echo "Your sorted file has been saved to $filename.sorted"
+echo "--------------------------------------------------------------"

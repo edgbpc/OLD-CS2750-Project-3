@@ -1,0 +1,168 @@
+#!/bin/bash
+
+##Script Author: Eric Goodwin
+##Assignment 3 for CS 2750 Spring Semester 2016
+
+##Write a script to present a user with the same information as ls -l  but in a more meaningful (or
+##user-friendly) manner.  You will be using multiple file operators to gather information about the file
+##and present it to the user. Here are the possibilities you need to account for:
+
+##Name your script fileinfo
+
+##If the use does not specify any parameter, print a help message and
+##exit. Do the same if the user specifies the option -h
+
+
+PATH=/usr/bin
+
+##functions
+
+
+##If the file is a directory, say so. Also let the user know if he/she may search the directory contents.
+##You do not have to go into the directory for files.
+
+## function optionsDir presents the user with choice to display contents of a directory.  specifications of
+##assignment did not state any additional actions were required other then to ask the user if they wanted
+##to search the contents.  
+optionsDir() {
+
+echo "Would you like to search the contents of $1? (yes/no)"
+read SearchDir
+
+case $SearchDir in
+
+Yes|yes|YES|y|Y)
+                ls $1
+                 ;;
+No|no|NO|n|N)
+	
+		;;
+*) 
+		echo Invalid selection.
+		optionsDir "$1"
+;;
+
+
+esac
+
+}
+
+##Let the user know if he has read/write/execute permissions on file but skip the execute permissions if the
+## file is a directory.
+
+##function filePermissions detects permissions in relation to the user.  it skips the execute check if the
+##file is a directory.
+filePermissions() {
+
+if [ -r "$1" ]
+  then
+     readp=true 
+  else
+     readp=false
+fi  
+echo Read Permission: $readp
+
+if [ -w "$1" ]
+  then 
+      writep=true
+  else
+      writep=false;
+
+fi
+echo Write Permission: $writep
+
+if  [ -x "$1" ]
+      then
+         executep=true
+      else
+         executep=false
+fi
+if ! [ -d "$1" ]   
+	then    
+	echo Execute Permission: $executep
+fi
+
+
+}
+
+##Let the user know if he/she owns the file/directory.
+
+##function Ownership checks if the logged in user owns the file and informs the user 
+Ownership() {
+
+uname2="$(stat --format '%U' "$1")"
+if [ "x${uname2}" = "x${USER}" ]; then
+    echo You own $1.
+else
+    echo You do not own $1.
+fi
+
+}
+
+##If the file is a regular file, say so, and if it is not a regular file or directory, tell the user that it is a
+##special type of file.
+
+##function regularFile checks if the file is a regular file
+regularFile() {
+
+if [ -f "$1" ]
+   then
+     echo $1 is a regular file
+   else
+     echo $1 is a special type
+fi
+
+}
+
+
+##Check if the file exists. If it does not, just say so and continue on with the next file.
+
+##Perform all the above operations in a function.  Make calls to the function using a loop on each file
+##specified as a parameter.
+
+##function checkFile checks if the parameter is a directory or file.  it also uses a loop to check every 
+##multiple parameters and processes the remaining functions.
+checkFile() {
+while [ "$1" ]
+do
+echo ---------------------------------------
+    if ! [ -e "$1" ]
+	then
+	echo "$1 does not exist."
+   
+    elif [ -d "$1" ] 
+       then 
+       echo "$1 is a directory"  
+       Ownership "$1"   
+       optionsDir "$1"
+       filePermissions "$1"
+    else
+       Ownership "$1"  
+       regularFile "$1" 
+       filePermissions "$1"
+   fi
+if [ -e "$1" ] || [ -d "$1" ] 
+  then
+   echo Last Modified: `stat -c%y $1  | cut -d'.' -f1`
+   echo File is in group: `stat -c %G  $1`
+   echo File size: `stat -c%s $1`
+   echo ---------------------------------------
+  else
+   echo --------------------------------------
+fi
+shift
+done
+}
+
+
+
+## main script
+
+if [ "$*" == "" ] || [ "$1" == "-h" ]  ##checks if no parameter or -h entered and displays a help message
+    then
+     echo Fileinfo displays information available in the command ls -l organized in a more user friendly manner.
+     echo Usage: Fileinfo with file names as parameters to display. 
+exit
+else
+checkFile "$@" ##if a parameter is entered other then -h, this function is called which exceutes the loop
+fi

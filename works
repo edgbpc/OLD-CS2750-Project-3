@@ -1,0 +1,259 @@
+Script started on Wed Nov  8 18:30:33 2017
+]0;edgbpc@delmar:~/edgbpc.3[?1034h[edgbpc@delmar edgbpc.3]$ ls
+[0m[38;5;34mREADME[0m  [38;5;34mbubblesort[0m  [38;5;34mdirtree[0m  [38;5;34mfileinfo[0m  works
+]0;edgbpc@delmar:~/edgbpc.3[edgbpc@delmar edgbpc.3]$ fileinfo works
+---------------------------------------
+You own works.
+works is a regular file
+Read Permission: true
+Write Permission: true
+Execute Permission: false
+Last Modified: 2017-11-08 18:30:33
+File is in group: students
+File size: 0
+---------------------------------------
+]0;edgbpc@delmar:~/edgbpc.3[edgbpc@delmar edgbpc.3]$ cd ..     bubblesort
+Enter file name to be sorted.
+works
+--------------------------------------------------------------
+Numbers Before Sort:
+
+--------------------------------------------------------------
+Numbers After Sort: 
+
+--------------------------------------------------------------
+Your sorted file has been saved to works.sorted
+--------------------------------------------------------------
+]0;edgbpc@delmar:~/edgbpc.3[edgbpc@delmar edgbpc.3]$ 
+]0;edgbpc@delmar:~/edgbpc.3[edgbpc@delmar edgbpc.3]$ ls
+[0m[38;5;34mREADME[0m  [38;5;34mbubblesort[0m  [38;5;34mdirtree[0m  [38;5;34mfileinfo[0m  works  works.sorted
+]0;edgbpc@delmar:~/edgbpc.3[edgbpc@delmar edgbpc.3]$ cd ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ ls
+5            [0m[38;5;34ma.out[0m     [38;5;27medgbpc.4[0m  [38;5;27mempty[0m     homefile    ls.txt       newerls.txt      [38;5;34mrun[0m
+[38;5;27mCS1250+2250[0m  [38;5;27medgbpc.1[0m  [38;5;27medgbpc.5[0m  find_out  key         ls.txt~      newls.txt        test.c
+[38;5;27mCS2750[0m       [38;5;27medgbpc.2[0m  [38;5;27medgbpc.6[0m  gmon.out  key.pub     ls3.txt      [38;5;27mprojectname.git[0m  testing.s
+Makefile     [38;5;27medgbpc.3[0m  [38;5;27medgbpc.7[0m  [38;5;27mhistory[0m   [38;5;27mlocal_proj[0m  ls_nums.txt  regex.c          testing.s~
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ cd edgbc pc.4
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ ls
+README  [0m[38;5;34ma.out[0m  account.c  acct_info  acct_info_t.h  acct_regex.c  card_t.h  sb.c  sb.c~  shuffle.c
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ a,out     .ou   a.out
+Which record would you like?5
+Account Owner:PEGGY MULVIHILL
+Record Number:5
+Account Balance:431.12
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ vi REAMD        ls
+README  [0m[38;5;34ma.out[0m  account.c  acct_info  acct_info_t.h  acct_regex.c  card_t.h  sb.c  sb.c~  shuffle.c
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ cat EA  README
+
+card_t.h
+added enumeration for card values.  This allows me to add the cards to the array by looping through these
+enumerations.  It makes the code easier to decipher what its doing rather then just looping through numbers.
+
+shuffle.c
+the program populates an array of cards as defined by the struct in card_t.h.  
+Added display of the cards before the shuffle only to show that the array was ordered before the shuffle.  
+the function displayDeck was created because displaying the deck was called three times.  Otherwise, assinging the cards to the array and shuffling is done once and thus not necessary to be done in a programmed defined function.  
+**UPDATE: CONVERTED ASSIGNING CARDS TO ARRAY AND SHUFFLING TO FUNCTIONS**
+
+
+The function is lengthly using a number of if, else if statements to assign the card number and suit.  Time depending, I intend to change this to a switch to reduce line of code.    
+**UPDATE: CONVERTED THE IF/ESLE IF INTO SWITCH**
+
+
+sb.c
+This program gave me the most trouble.  I struggled with the bitwise operations. 
+I use the same loop to load the deckofcards array and to display the cards.  I should have made a another file for all function definations so that I didn't have to copy the functions into the second program.  However, as it stands, the functions are duplicated in sb.c.
+Again, the displayDeck function is lengthly and needs to be changed to switch for simplicity.    
+**UPDATE: CONVERTED THE IF/ESLE IF INTO SWITCH**
+
+
+Account.c
+
+This program searches file acct_info by record number and displays account owner and account balance.
+Due to a record existing in the 0 element, my program takes the user input and subtracts one to display the
+intended record.  A lay person requesting a record would not enter 0 expecting to find the 1st record. 
+Therefore, to get the 0 record, the user would input one.  
+
+Assignment specifications do not require a name search therefore this program only searches by name.
+I did add the account name to be displayed but this was also not required.
+Also added display of record number.
+
+
+acct_regex.c
+
+this is the version of account.c that includes the extra credit portion.  It has functuality of the record # search and alpha string search.  I have included both versions in my hand in.
+
+
+
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ CD..
+bash: CD..: command not found
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ cd..
+bash: cd..: command not found
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ ls
+README  [0m[38;5;34ma.out[0m  account.c  acct_info  acct_info_t.h  acct_regex.c  card_t.h  sb.c  sb.c~  shuffle.c
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ cd ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ ls
+5            [0m[38;5;34ma.out[0m     [38;5;27medgbpc.4[0m  [38;5;27mempty[0m     homefile    ls.txt       newerls.txt      [38;5;34mrun[0m
+[38;5;27mCS1250+2250[0m  [38;5;27medgbpc.1[0m  [38;5;27medgbpc.5[0m  find_out  key         ls.txt~      newls.txt        test.c
+[38;5;27mCS2750[0m       [38;5;27medgbpc.2[0m  [38;5;27medgbpc.6[0m  gmon.out  key.pub     ls3.txt      [38;5;27mprojectname.git[0m  testing.s
+Makefile     [38;5;27medgbpc.3[0m  [38;5;27medgbpc.7[0m  [38;5;27mhistory[0m   [38;5;27mlocal_proj[0m  ls_nums.txt  regex.c          testing.s~
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ cd edgbc pc.4
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ ls
+README  [0m[38;5;34ma.out[0m  account.c  acct_info  acct_info_t.h  acct_regex.c  card_t.h  sb.c  sb.c~  shuffle.c
+]0;edgbpc@delmar:~/edgbpc.4[edgbpc@delmar edgbpc.4]$ cd ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ cd edgbc pc.5
+]0;edgbpc@delmar:~/edgbpc.5[edgbpc@delmar edgbpc.5]$ ls
+README  [0m[38;5;27mqueue[0m  [38;5;27msieve[0m  [38;5;27mtelephone[0m
+]0;edgbpc@delmar:~/edgbpc.5[edgbpc@delmar edgbpc.5]$ sieve
+bash: sieve: command not found
+]0;edgbpc@delmar:~/edgbpc.5[edgbpc@delmar edgbpc.5]$ ca RE    T at README
+Author: Eric Goodwin
+Class: CS2750 Section E01 Assignment 5
+Professor: Dr. Sanjiv Bhatia
+
+
+sieve.c
+
+program uses series of functions with bit vector shifting in order to execute the queue.
+no output format was required by the assignment specifications so it outputs one number after another.
+I did try several attempts at spacing to ease reading but ultimately I did not keep any of these 
+implemmentations. I opted to not pursue more complicated output in order to spend  more time on the queue assignment.
+
+no additional features beyond assignment requirements.
+
+telephone.c
+
+program can handle any white space and special characters.  it simply reads the input string and uses 
+isdigit to detect a digit and if it finds a digit, it puts in an array.  function then prints each 
+element in the array in the format (XXX) XXX-XXXX.
+
+there is extra code not used in the function file because in an abanonded approach, i attempted to 
+seperate out the first 3 digits, last four digits and then the remaining digits using a series of 
+modulo and division operators.  this approach did work to seperate out a 10 digit number.  H
+owever, this approach could not handle white spaces so I abandoned the approach. I left the code 
+in case i wanted to refer back to how modulo and division could seperate a number.
+
+
+otherwise, the program meets all assignment specifications with no additional features.
+
+
+The queue project consists of three programs: generator.c, qrocery_sim.c and bakery_sim.c
+
+This assignment was the most challenging.  I tried several approaches before settling on the eventual approach.
+
+My thought process for the eventual approach was to create a linked list that had all my customers, and then ass 
+their arrival time came up (counted by a timer variable as the while loop is processing) then a cutomer was 
+removed from the last and entered into a linked list representing the check out line.  In bakery_sim there was 
+just one queue line leading to a clerk but in grocery_sim there is an array of linked lists.
+
+As the clerk reached their service time (and counted by the timer variable) then a customer was removed form that 
+linked list and then their data was calculated into the accumulation variables contained in the Clerks_T struct.
+
+
+i tried to keep seperate files based on their role in the programs.  IE queue.c and queue.h  contain the necessary 
+files constructing the linked list structs.  
+
+functions.c includes all functions for both styles of sims with one exception.  There is funtion used to find the 
+best checkout line and its in the grocery_sim.c file because its only used by that sim.
+
+Some of my prototypes ended up in queue.h and some in the sims.  I should have combined these into a single header 
+file but I was more concerned about completing a working version of the program then clean up where the prototypes 
+were located.
+
+generator.c 
+contains the program that creates the list of customers. 
+
+grocery_sim.c 
+program simulates the multi-queue line system. 
+
+bakery_sim.c 
+program simulates the single queue line system.
+
+both progams are nearly the same with some changes to accomdate of the array of queues approach.
+
+generally, i try to keep even failed approachs in the program commented out so the process can be seen as to 
+how I developed the program, but in this case, the code would have been very messy so i removed the used code. 
+ I tried to keep detailed comments in the code explaining my throught process.
+
+****A note on the output - the simulation loops run until all the customers are served not based on a time limit.  I do not report any remaining customers because have been served.*****
+
+Makefile
+
+All programs include Makefile.
+
+git
+
+I do my primary writing in a seperate directory from the hand in directory and my .git directory is in that directory I do that primary writing. as a result,i could not include the .git directory in my handin.  However, I do inclode the git log for each of the programs 
+]0;edgbpc@delmar:~/edgbpc.5[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ [K[edgbpc@delmar edgbpc.5]$ CS    cd ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ ls
+5            [0m[38;5;34ma.out[0m     [38;5;27medgbpc.4[0m  [38;5;27mempty[0m     homefile    ls.txt       newerls.txt      [38;5;34mrun[0m
+[38;5;27mCS1250+2250[0m  [38;5;27medgbpc.1[0m  [38;5;27medgbpc.5[0m  find_out  key         ls.txt~      newls.txt        test.c
+[38;5;27mCS2750[0m       [38;5;27medgbpc.2[0m  [38;5;27medgbpc.6[0m  gmon.out  key.pub     ls3.txt      [38;5;27mprojectname.git[0m  testing.s
+Makefile     [38;5;27medgbpc.3[0m  [38;5;27medgbpc.7[0m  [38;5;27mhistory[0m   [38;5;27mlocal_proj[0m  ls_nums.txt  regex.c          testing.s~
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ cd edgbpc.6
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ ls
+Makefile  README  gitlog.mysh  makeargv.c  makeargv.o  [0m[38;5;34mmysh[0m  mysh.c  mysh.o
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ cat README
+Author: Eric Goodwin
+Class: CS 2750 Section E01 Assignment 6
+Dr. Sanjiv Bhatia
+
+Makefile
+script allows for creation of mysh executable file.  
+command make mysh creates the executable
+command make clean to remove all o and ~ files
+
+makeargv.c
+This file provided by Dr. Sanjiv Bhatia and used with permission
+
+mysh.c
+
+In PS1 parsing, my case statement only checks for the required options from the assignment specifications and ignores all others 
+the prompt is rebuilt every time the while loop is processed in order to keep the current directory accurate in the prompt.
+
+used unset PS1 to validate the program does display $ when there is no PS1 defined
+
+cd and exit commands are built in to the shell 
+
+extra credit portion of the assignment was accomplished by turning ignoring ctrl c at start of the while loop and when if statement that forks the child process is executed, default behavior for ctrl c is re-enabled.  When child process terminates, either via ctrl c or natural completion of the process, ctrl c is one again ignored when the while loop repeats.
+
+added a message when ctrl c is used that describes when it can be used
+
+added function to replace string in HOME with ~ to truncate working directory.
+
+
+
+shell tested using a number of different commands including:
+ls -l
+ls
+exit (built in)
+cd (built in)
+cd .. functions 
+vi 
+mysh (starting another instance of the shell)
+mkdir
+rmdir
+
+
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ J LS
+bash: LS: command not found
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ LS  ls
+Makefile  README  gitlog.mysh  makeargv.c  makeargv.o  [0m[38;5;34mmysh[0m  mysh.c  mysh.o
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ mysh
+$ exit
+]0;edgbpc@delmar:~/edgbpc.6[edgbpc@delmar edgbpc.6]$ l cs .    d .   cdc  ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ ls
+5            [0m[38;5;34ma.out[0m     [38;5;27medgbpc.4[0m  [38;5;27mempty[0m     homefile    ls.txt       newerls.txt      [38;5;34mrun[0m
+[38;5;27mCS1250+2250[0m  [38;5;27medgbpc.1[0m  [38;5;27medgbpc.5[0m  find_out  key         ls.txt~      newls.txt        test.c
+[38;5;27mCS2750[0m       [38;5;27medgbpc.2[0m  [38;5;27medgbpc.6[0m  gmon.out  key.pub     ls3.txt      [38;5;27mprojectname.git[0m  testing.s
+Makefile     [38;5;27medgbpc.3[0m  [38;5;27medgbpc.7[0m  [38;5;27mhistory[0m   [38;5;27mlocal_proj[0m  ls_nums.txt  regex.c          testing.s~
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ cd edgbpc.7
+]0;edgbpc@delmar:~/edgbpc.7[edgbpc@delmar edgbpc.7]$ ls
+[0m[38;5;34mREADME[0m  [38;5;34mREADME.old[0m  [38;5;34mbook_print[0m  [38;5;34mbookinfo[0m  [38;5;34mbooks[0m  [38;5;34mfizzbuzz[0m  [38;5;34mflcln[0m
+]0;edgbpc@delmar:~/edgbpc.7[edgbpc@delmar edgbpc.7]$ cd ..
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ :Q Q!   Q!  q!
+bash: q!: command not found
+]0;edgbpc@delmar:~[edgbpc@delmar ~]$ exit
+exit
+
+Script done on Wed Nov  8 18:34:44 2017

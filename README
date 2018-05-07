@@ -1,0 +1,17 @@
+Bubblesort script
+
+Added ability for user to specify file to be sorted
+Added file validation for specified file
+Added on screen readout of Array before and after sort
+Added on screen notification of the filename for the sorted file
+
+dirtree script
+Added output message if no directory found
+Added help option that displays usage rules.
+Added characters ~ . .. / invalid.  Use prompts usage messge.
+
+fileinfo script
+No additional features beyond the assignment specifications.
+script works with ! . .. / and files starting with .
+
+

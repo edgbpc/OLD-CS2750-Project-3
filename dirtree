@@ -1,0 +1,38 @@
+#!/bin/bash
+
+##Script Author: Eric Goodwin
+##Assignment 3 for CS 2750 Spring Semester 2016
+
+PATH=/usr/bin
+
+case $@ in
+
+help|.|~|..|/) 
+	echo "USAGE: Dirtree with no parameter to display tree from home directory.
+	      Dirtree with parameter to search specific directory from any location.
+	      Characters ~ . .. / are invalid."
+	exit
+;;
+             
+"")
+        cd ~
+        find  \( ! -regex '.*/\..*' \) -print | sed -e 's/^.//' -e 's;[^/]*/; /;g;s;/ ;|       ;g;s;^ /$;.;;s; /; |-------;g'
+             
+;;
+
+*)
+      dir=`find ~/ -type d -name $1`
+       if ! [ -d "`find ~/ -type d -name $1`" ]
+           then 
+	        echo "Directory does not exist.
+Type dirtree help for help."
+           else
+     	     cd $dir
+             find  \( ! -regex '.*/\..*' \) -print | sed -e 's/^.//'  -e 's;[^/]*/; /;g;s;/ ;|       ;g;s;^ /$;.;;s; /; |-------;g'
+       fi
+;;
+
+esac
+
+  ##  the below is the basic format used above.  keeping this commented line in order to have baseline to work off of
+  ##  find . \( ! -regex '.*/\..*' \) -print | sed -e 's;[^/]*/; /;g;s;/ ;|       ;g;s;^ /$;.;;s; /; |-------;g'
